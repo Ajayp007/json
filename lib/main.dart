@@ -5,6 +5,7 @@ import 'package:untitled/screen/comments/provider/comment_provider.dart';
 import 'package:untitled/screen/photos/provider/photos_provider.dart';
 import 'package:untitled/screen/post/provider/post_provider.dart';
 import 'package:untitled/screen/todos/provider/todos_provider.dart';
+import 'package:untitled/screen/user/provider/user_provider.dart';
 import 'package:untitled/utils/routes.dart';
 
 void main() {
@@ -16,6 +17,7 @@ void main() {
         ChangeNotifierProvider.value(value: AlbumProvider()),
         ChangeNotifierProvider.value(value: PhotosProvider()),
         ChangeNotifierProvider.value(value: TodosProvider()),
+        ChangeNotifierProvider.value(value: UserProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

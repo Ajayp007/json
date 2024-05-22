@@ -6,6 +6,7 @@ import 'package:untitled/screen/comments/model/comment_model.dart';
 import 'package:untitled/screen/photos/model/photos_model.dart';
 import 'package:untitled/screen/post/model/post_model.dart';
 import 'package:untitled/screen/todos/model/todos_model.dart';
+import 'package:untitled/screen/user/model/user_model.dart';
 
 class JsonHelper {
   Future<List<PostModel>> postJson() async {
@@ -43,5 +44,19 @@ class JsonHelper {
     List tJson = jsonDecode(todoJson);
     List<TodosModel> l5 = tJson.map((e) => TodosModel.mapTomodel(e)).toList();
     return l5;
+  }
+
+  Future<List<UserModel>> userJson() async {
+    String userJsonString =
+        await rootBundle.loadString("assets/json/user.json");
+
+    List userList = jsonDecode(userJsonString);
+    List<UserModel> l6 = userList
+        .map(
+          (e) => UserModel.mapToModel(e),
+        )
+        .toList();
+
+    return l6;
   }
 }
