@@ -15,7 +15,8 @@ class _HomeScreenState extends State<HomeScreen> {
     'Album',
     'Todos',
     'User',
-    'Country'
+    'Country',
+    'News'
   ];
 
   List routes = [
@@ -25,7 +26,8 @@ class _HomeScreenState extends State<HomeScreen> {
     'album',
     'todos',
     'user',
-    'country'
+    'country',
+    'news'
   ];
 
   @override
@@ -34,7 +36,6 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text(
           "Json",
-          style: TextStyle(color: Colors.green),
         ),
         centerTitle: true,
       ),
@@ -48,8 +49,6 @@ class _HomeScreenState extends State<HomeScreen> {
               Navigator.pushNamed(context, "${routes[index]}");
             },
             child: Container(
-              height: 50,
-              width: 50,
               margin: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 color: Colors.grey.shade300,
@@ -65,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Center(
                 child: Text(
                   "${names[index]}",
-                  style: const TextStyle(fontSize: 20, color: Colors.green),
+                  style: const TextStyle(fontSize: 20,),
                 ),
               ),
             ),

@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:untitled/screen/albums/model/album_model.dart';
 import 'package:untitled/screen/comments/model/comment_model.dart';
 import 'package:untitled/screen/country/model/country_model.dart';
+import 'package:untitled/screen/news/model/news_model.dart';
 import 'package:untitled/screen/photos/model/photos_model.dart';
 import 'package:untitled/screen/post/model/post_model.dart';
 import 'package:untitled/screen/todos/model/todos_model.dart';
@@ -66,5 +67,15 @@ class JsonHelper {
         countryList.map((e) => CountryModel.mapToModel(e)).toList();
 
     return l7;
+  }
+
+  Future<NewsModel> newsJson() async {
+    String countryJsonString =
+        await rootBundle.loadString("assets/json/news.json");
+
+    var newsList = jsonDecode(countryJsonString);
+    NewsModel l8 =NewsModel.mapToModel(newsList);
+
+    return l8;
   }
 }
