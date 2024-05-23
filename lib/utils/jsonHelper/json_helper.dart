@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:untitled/screen/albums/model/album_model.dart';
 import 'package:untitled/screen/comments/model/comment_model.dart';
+import 'package:untitled/screen/country/model/country_model.dart';
 import 'package:untitled/screen/photos/model/photos_model.dart';
 import 'package:untitled/screen/post/model/post_model.dart';
 import 'package:untitled/screen/todos/model/todos_model.dart';
@@ -51,12 +52,19 @@ class JsonHelper {
         await rootBundle.loadString("assets/json/user.json");
 
     List userList = jsonDecode(userJsonString);
-    List<UserModel> l6 = userList
-        .map(
-          (e) => UserModel.mapToModel(e),
-        )
-        .toList();
+    List<UserModel> l6 = userList.map((e) => UserModel.mapToModel(e)).toList();
 
     return l6;
+  }
+
+  Future<List<CountryModel>> countryJson() async {
+    String countryJsonString =
+        await rootBundle.loadString("assets/json/country.json");
+
+    List countryList = jsonDecode(countryJsonString);
+    List<CountryModel> l7 =
+        countryList.map((e) => CountryModel.mapToModel(e)).toList();
+
+    return l7;
   }
 }
